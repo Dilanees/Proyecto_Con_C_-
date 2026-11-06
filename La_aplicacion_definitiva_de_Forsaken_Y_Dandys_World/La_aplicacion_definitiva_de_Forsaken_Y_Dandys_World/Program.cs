@@ -52,6 +52,17 @@ namespace La_aplicacion_definitiva_de_Forsaken_Y_Dandys_World
 
             // Reemplazamos el ReadKey() por un ReadLine para poder capturar la letra elegida
             string opcionDandys = Console.ReadLine()!;
+
+
+            while (opcionDandys != "a" && opcionDandys != "b" && opcionDandys != "c")
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Introduzca un número válido che. Ingresa 'a' para Consultoria, 'b' para Comparacion de Personajes y 'c' para Game Tracker  :");
+                Console.ResetColor();
+                opcionDandys = Console.ReadLine()!;
+
+            }
+
             if (opcionDandys == "a")
             {
                 ConsultoriaDandy();
@@ -65,6 +76,9 @@ namespace La_aplicacion_definitiva_de_Forsaken_Y_Dandys_World
             {
                 GameTrackerDandys();
             }
+
+       
+
         }
         static void MenuForsaken()
         {
@@ -114,11 +128,20 @@ namespace La_aplicacion_definitiva_de_Forsaken_Y_Dandys_World
             Console.WriteLine("b) Comparacion de personajes");
             Console.WriteLine("c) Game Tracker");
 
-         
+
 
             // Reemplazamos el ReadKey() por un ReadLine para poder capturar la letra elegida
             string opcionForsaken = Console.ReadLine()!;
 
+
+            while (opcionForsaken != "a" && opcionForsaken != "b" && opcionForsaken != "c")
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Introduzca un número válido che. Ingresa 'a' para Consultoria, 'b' para Comparacion de Personajes y 'c' para Game Tracker  :");
+                Console.ResetColor();
+                opcionForsaken = Console.ReadLine()!;
+
+            }
 
             if (opcionForsaken == "a")
             {
@@ -134,10 +157,16 @@ namespace La_aplicacion_definitiva_de_Forsaken_Y_Dandys_World
                 // Llamar a la función de estadísticas de Forsaken
                 GameTrackerForsaken();
             }
+
+
+
         }
+
 
         static void ConsultoriaDandy()
         {
+            Console.Clear();
+
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             BaseDatos miBaseDeDatos = new BaseDatos();
 
@@ -206,7 +235,9 @@ namespace La_aplicacion_definitiva_de_Forsaken_Y_Dandys_World
                 }
                 else
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Lo sentimos, no se ha encontrado ninguna respuesta registrada para su pregunta :(.");
+                    Console.ResetColor();
                 }
                 Console.WriteLine("====================================================");
 
@@ -217,24 +248,33 @@ namespace La_aplicacion_definitiva_de_Forsaken_Y_Dandys_World
         }
 
         static void ComparacionPersonajesDandys()
-        {
+{          
+   
 
-            Console.WriteLine("Has Elegido");
-            Console.WriteLine("====================================================");
-            Console.WriteLine("               COMPARACION DE PERSONAJES 🤝");
-            Console.WriteLine("====================================================\n");
-            Console.WriteLine("\n Hola! Aqui podras comparar personajes!");
+                Console.Clear();
 
-            Console.WriteLine("\nIngrese al primer personaje");
 
-            string Personaje1 = Console.ReadLine()!;
+                Console.WriteLine("Has Elegido");
+                Console.WriteLine("====================================================");
+                Console.WriteLine("               COMPARACION DE PERSONAJES 🤝");
+                Console.WriteLine("====================================================\n");
+                Console.WriteLine("\n Hola! Aqui podras comparar personajes!");
 
-            Console.WriteLine("¿Con que otro personaje desea comparar el seleccionado?");
+                Console.WriteLine("\nIngrese al primer personaje");
 
-            string Personaje2 = Console.ReadLine()!;
+                string Personaje1 = Console.ReadLine()!;
 
-            Personaje comparador = new Personaje();
-            comparador.CompararEnBD(Personaje1, Personaje2, "DANDYS WORLD");
+                Console.WriteLine("¿Con que otro personaje desea comparar el seleccionado?");
+
+                string Personaje2 = Console.ReadLine()!;
+
+                Personaje comparador = new Personaje();
+                comparador.CompararEnBD(Personaje1, Personaje2, "DANDYS WORLD");
+
+
+
+
+          
 
 
 
@@ -242,6 +282,8 @@ namespace La_aplicacion_definitiva_de_Forsaken_Y_Dandys_World
         }
         static void GameTrackerDandys()
         {
+            Console.Clear();
+
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             Console.WriteLine("Has Elegido");
             Console.WriteLine("====================================================");
@@ -267,8 +309,8 @@ namespace La_aplicacion_definitiva_de_Forsaken_Y_Dandys_World
             Console.WriteLine(dibujo);
             BaseDatos bd = new BaseDatos();
 
-            while (true) 
-          {
+            while (true)
+            {
                 Console.WriteLine("¿que desea hacer?");
 
                 Console.WriteLine(" 1. Registar Partida 🎮");
@@ -320,17 +362,17 @@ namespace La_aplicacion_definitiva_de_Forsaken_Y_Dandys_World
                     Console.ResetColor();
 
                 }
-                    
-                    
-                    
-                    
-               
-            
+
+
+
+
+
+
 
 
             }
 
-      
+
 
 
 
@@ -340,6 +382,7 @@ namespace La_aplicacion_definitiva_de_Forsaken_Y_Dandys_World
 
         static void ConsultoriaForsaken()
         {
+            Console.Clear();
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             BaseDatos miBaseDeDatos = new BaseDatos();
 
@@ -409,7 +452,9 @@ namespace La_aplicacion_definitiva_de_Forsaken_Y_Dandys_World
                 }
                 else
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Lo sentimos, no se ha encontrado ninguna respuesta registrada para su pregunta :(.");
+                    Console.ResetColor();                   
                 }
                 Console.WriteLine("====================================================");
 
@@ -418,7 +463,10 @@ namespace La_aplicacion_definitiva_de_Forsaken_Y_Dandys_World
             }
         }
         static void ComparacionPersonajesForsaken()
+
         {
+            Console.Clear();
+
             Console.WriteLine("Has Elegido");
             Console.WriteLine("====================================================");
             Console.WriteLine("               COMPARACION DE PERSONAJES 🤝");
@@ -443,17 +491,17 @@ namespace La_aplicacion_definitiva_de_Forsaken_Y_Dandys_World
         static void GameTrackerForsaken()
         {
 
-            
+            Console.Clear();
 
-                Console.OutputEncoding = System.Text.Encoding.UTF8;
-                Console.WriteLine("Has Elegido");
-                Console.WriteLine("====================================================");
-                Console.WriteLine("               GAME TRACKER 🎮");
-                Console.WriteLine("====================================================\n");
-                Console.WriteLine("\n Hola Soy Tu asistente de registro de partidas ");
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.WriteLine("Has Elegido");
+            Console.WriteLine("====================================================");
+            Console.WriteLine("               GAME TRACKER 🎮");
+            Console.WriteLine("====================================================\n");
+            Console.WriteLine("\n Hola Soy Tu asistente de registro de partidas ");
 
 
-                string dibujo = @"⠀⠀
+            string dibujo = @"⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣦⣄⡀⠀⠀⢀⣠⣴⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀
@@ -467,141 +515,143 @@ namespace La_aplicacion_definitiva_de_Forsaken_Y_Dandys_World
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀         ";
-                Console.WriteLine(dibujo);
-                BaseDatos bd = new BaseDatos();
+            Console.WriteLine(dibujo);
+            BaseDatos bd = new BaseDatos();
 
-                while (true)
+            while (true)
+            {
+                Console.WriteLine("¿que desea hacer?");
+
+                Console.WriteLine(" 1. Registar Partida 🎮");
+                Console.WriteLine(" 2. Mostrar Historial de partidas");
+                Console.WriteLine(" 3. Buscar partida");
+                Console.WriteLine(" 4. Actualizar informacion de partidas");
+                Console.WriteLine(" 5. Eliminar registro de partida");
+                Console.WriteLine(" 6. Salir");
+                String Opciones_CRUD = Console.ReadLine()!;
+
+                if (Opciones_CRUD == "1")
                 {
-                    Console.WriteLine("¿que desea hacer?");
-
-                    Console.WriteLine(" 1. Registar Partida 🎮");
-                    Console.WriteLine(" 2. Mostrar Historial de partidas");
-                    Console.WriteLine(" 3. Buscar partida");
-                    Console.WriteLine(" 4. Actualizar informacion de partidas");
-                    Console.WriteLine(" 5. Eliminar registro de partida");
-                    Console.WriteLine(" 6. Salir");
-                    String Opciones_CRUD = Console.ReadLine()!;
-
-                    if (Opciones_CRUD == "1")
-                    {
 
                     bd.RegistrarPartida(new PartidaForsaken());
                 }
 
 
-                    else if (Opciones_CRUD == "2")
-                    {
-                        bd.MostrarHistorial();
+                else if (Opciones_CRUD == "2")
+                {
+                    bd.MostrarHistorial();
 
-                    }
-                    else if (Opciones_CRUD == "3")
-                    {
-                        bd.BuscaPartida();
+                }
+                else if (Opciones_CRUD == "3")
+                {
+                    bd.BuscaPartida();
 
-                    }
-                    else if (Opciones_CRUD == "4")
-                    {
-                        bd.ActualizarPartida();
+                }
+                else if (Opciones_CRUD == "4")
+                {
+                    bd.ActualizarPartida();
 
-                    }
-                    else if (Opciones_CRUD == "5")
-                    {
-                        bd.BorrarPartida();
+                }
+                else if (Opciones_CRUD == "5")
+                {
+                    bd.BorrarPartida();
 
-                    }
+                }
 
-                    else if (Opciones_CRUD.ToLower() == "salir" || Opciones_CRUD == "6")
-                    {
-                        Console.WriteLine("Saliendo del GAME TRACKER...");
-                        break;
-                    }
-                    else
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
+                else if (Opciones_CRUD.ToLower() == "salir" || Opciones_CRUD == "6")
+                {
+                    Console.WriteLine("Saliendo del GAME TRACKER...");
+                    break;
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
 
-                        Console.WriteLine("ERROR: escribe bien ");
-                        Console.ResetColor();
-
-                    }
-
-
-
-
-
-
-
+                    Console.WriteLine("ERROR: escribe bien ");
+                    Console.ResetColor();
 
                 }
 
 
 
-            
-
 
 
 
 
 
             }
-            static void Main(string[] args)
-            {
-                Console.WriteLine("Hola, Bienvenido a la applicacion de ayuda definitiva de");
-                Console.WriteLine("");
-                Console.WriteLine("====================================================");
-                Console.WriteLine("               FORSAKEN Y DANDYS WORLD");
-                Console.WriteLine("====================================================\n");
 
-                Console.WriteLine("");
-                Console.WriteLine("");
-                Console.WriteLine("Quieres que te explique como funciona la aplicacion?");
-                Console.WriteLine("");
 
-                Console.WriteLine("1.Si");
-                Console.WriteLine("2.No");
-                String Opcion = Console.ReadLine()!;
+
+
+
+
+
+
+
+
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hola, Bienvenido a la applicacion de ayuda definitiva de");
+            Console.WriteLine("");
+            Console.WriteLine("====================================================");
+            Console.WriteLine("               FORSAKEN Y DANDYS WORLD");
+            Console.WriteLine("====================================================\n");
+
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("Quieres que te explique como funciona la aplicacion?");
+            Console.WriteLine("");
+
+            Console.WriteLine("1.Si");
+            Console.WriteLine("2.No");
+            String Opcion = Console.ReadLine()!;
 
             while (Opcion != "1" && Opcion != "2")
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Introduzca un número válido che. Ingresa '1' para Si o '2' para No:");
+                Console.ResetColor();
                 Opcion = Console.ReadLine()!;
+
             }
 
             if (Opcion == "1")
             {
-                    Console.Clear();
+                Console.Clear();
 
 
-                    Console.WriteLine("Genial!!, ahora te explico para que te quede todo claro jsjjs");
-                    Console.WriteLine("Tenemos 3 categorias");
-                    Console.WriteLine("Consultoria");
-                    Console.Write("Esta función es como tener a un jugador experto dándote consejos al instante para que no sufras durante tus primeros días de juego." +
-                        " Te daremos guías detalladas y tácticas para que aprendas a sobrevivir rápido y sin frustrarte");
-                    Console.WriteLine("");
-                    Console.WriteLine("");
-                    Console.WriteLine("");
+                Console.WriteLine("Genial!!, ahora te explico para que te quede todo claro jsjjs");
+                Console.WriteLine("Tenemos 3 categorias");
+                Console.WriteLine("Consultoria");
+                Console.Write("Esta función es como tener a un jugador experto dándote consejos al instante para que no sufras durante tus primeros días de juego." +
+                    " Te daremos guías detalladas y tácticas para que aprendas a sobrevivir rápido y sin frustrarte");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
 
-                    Console.WriteLine("Comparacion de Personajes");
-                    Console.Write("Ya no tienes que adivinar quién es el mejor. Aquí puedes poner cara a cara a distintos personajes para comparar sus pros, " +
-                        "contras, habilidades y roles (como soporte, centinela o survivalista). Así sabrás exactamente " +
-                        "a quién elegir según tu estilo antes de entrar a la partida.");
-                    Console.WriteLine("");
-                    Console.WriteLine("");
-                    Console.WriteLine("");
+                Console.WriteLine("Comparacion de Personajes");
+                Console.Write("Ya no tienes que adivinar quién es el mejor. Aquí puedes poner cara a cara a distintos personajes para comparar sus pros, " +
+                    "contras, habilidades y roles (como soporte, centinela o survivalista). Así sabrás exactamente " +
+                    "a quién elegir según tu estilo antes de entrar a la partida.");
+                Console.WriteLine("");
+                Console.WriteLine("");
+                Console.WriteLine("");
 
-                    Console.WriteLine("Estadisticas");
-                    Console.Write("Llevamos un registro de tus números para que veas cómo pasas de principiante a pro." +
-                        " o que erorres tuviste para intentar mejorar evitar que te pase, o para mejorar, y te enviaremos" +
-                        " un informe por tu correo electrónico");
+                Console.WriteLine("Game tracker");
+                Console.Write("Llevamos un registro de tus números para que veas cómo pasas de principiante a pro." +
+                    " o que erorres tuviste para intentar mejorar evitar que te pase y para mejorar, ");
                 Console.WriteLine("");
                 Console.WriteLine("");
                 Console.WriteLine("");
 
             }
 
-                else if (Opcion == "2")
-                {
-                    Console.Clear();
-                    Console.WriteLine("Ok, parece que ya te lo sabes, ¡GENIAL!");
+            else if (Opcion == "2")
+            {
+                Console.Clear();
+                Console.WriteLine("Ok, parece que ya te lo sabes, ¡GENIAL!");
                 Console.WriteLine("");
                 Console.WriteLine("");
 
@@ -609,38 +659,44 @@ namespace La_aplicacion_definitiva_de_Forsaken_Y_Dandys_World
             }
 
 
-                
-                Console.WriteLine("Entonces ahora dime");
-                Console.WriteLine("Con que Juego empezamos?");
-                Console.WriteLine("");
-                Console.WriteLine("d)Dandys World");
-                Console.WriteLine("f)Forsaken");
-                string OpcionJuego = Console.ReadLine()!;
 
-            
+            Console.WriteLine("Entonces ahora dime");
+            Console.WriteLine("Con que Juego empezamos?");
+            Console.WriteLine("");
+            Console.WriteLine("d)Dandys World");
+            Console.WriteLine("f)Forsaken");
+            string OpcionJuego = Console.ReadLine()!;
+
+
             while (OpcionJuego != "d" && OpcionJuego != "f")
             {
-                Console.WriteLine("Introduzca un número válido che. Ingresa 'd' para Dandys World o 'f' para Forsaken:");       
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Introduzca un número válido che. Ingresa 'd' para Dandys World o 'f' para Forsaken:");
+                Console.ResetColor();
                 OpcionJuego = Console.ReadLine()!;
             }
 
 
             if (OpcionJuego == "d")
-                {
-                    Console.Clear();
-                    MenuDandysWorld();
+            {
 
 
-                }
-                else if (OpcionJuego == "f")
-                {
-                    Console.Clear();
-                    MenuForsaken();
-                }
-        
+                Console.Clear();
+                MenuDandysWorld();
 
 
             }
+
+
+            else if (OpcionJuego == "f")
+            {
+                Console.Clear();
+                MenuForsaken();
+            }
+
+
+
+
 
 
 
@@ -681,8 +737,7 @@ namespace La_aplicacion_definitiva_de_Forsaken_Y_Dandys_World
         }
     }
 
-
-
+}
 
 
 
