@@ -7,18 +7,6 @@ using System.Text;
 using System.Linq;
 
 
-public class Partida
-{
-    public string Juego { get; set; } = "";
-    public string PersonajeUsado { get; set; } = "";
-    public string Resultado { get; set; } = "";
-    public int PisoORonda { get; set; }
-    public string CausaMuerte { get; set; } = "";
-    public string Tiempo_Sobrevivido { get; set; } = "";
-    public int Generadores_Reparados { get; set; } = 0;
-
-    public virtual void PedirDatos() { }
-}
 
 public class PartidaDW : Partida
 {
@@ -52,7 +40,7 @@ public class PartidaDW : Partida
         while (!int.TryParse(Console.ReadLine(), out Piso_Ingresado) || Piso_Ingresado <= 0)
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Error: Ingresa un número válido entre 1 y 24. No se aceptan 0, negativos ni símbolos.");
+            Console.WriteLine("Error: No se aceptan 0, negativos ni símbolos.");
             Console.ResetColor();
             // Volvemos a pedir el dato para evitar el bucle infinito
             Console.Write("Intente nuevamente (solo número): ");
@@ -77,4 +65,8 @@ public class PartidaDW : Partida
 
         Resultado = "Eliminado";
     }
+
+
 }
+
+
