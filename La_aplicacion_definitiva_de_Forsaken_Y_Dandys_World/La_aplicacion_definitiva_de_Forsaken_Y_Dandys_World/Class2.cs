@@ -1,4 +1,4 @@
-﻿using La_aplicacion_definitiva_de_Forsaken_Y_Dandys_World;
+using La_aplicacion_definitiva_de_Forsaken_Y_Dandys_World;
 using Microsoft.Data.Sqlite;
 using System;
 
