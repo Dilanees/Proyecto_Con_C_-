@@ -6,7 +6,7 @@ using Microsoft.Data.Sqlite;
 public class Personaje
 {
     //importanstisimo que sea privada, asi no se modifica accidentalmente
-    private string Conexion = "Data Source=TrackerDB.sqlite";
+    private string Conexion = @"Data Source=C:\BD\TrackerDB.sqlite";
     private bool encontro;
     private string? comparacionSQL;
     private string? nombreTabla;
@@ -19,6 +19,7 @@ public class Personaje
             {
                 conexion.Open();
 
+                // AQUÍ LE DECIMOS QUÉ TABLA USAR DEPENDIENDO DEL JUEGO
                 nombreTabla = juego == "FORSAKEN" ? "[Personajes Forsaken]" : "[Personajes Dandy's World]";
 
                 // le puse esto para que busque respuesta de la tabla y puse where y todo eso para que no sea tan stricta, 
@@ -59,6 +60,10 @@ public class Personaje
                                     Console.WriteLine($" Habilidad 2: {lector["Hab. 2"]}");
                                     Console.WriteLine($" Habilidad 3: {lector["Hab. 3"]}");
                                     Console.WriteLine($" Habilidad 4: {lector["Hab. 4"]}");
+
+                                    // Freno para que puedas leer la comparación sin que se cierre
+                                    Console.WriteLine("\n¡Comparación finalizada!");
+                                    Console.ReadLine();
                                 }
                                 else
                                 {
@@ -93,6 +98,10 @@ public class Personaje
                                     Console.WriteLine($" Visión Circular: {lector["Rango de Vision (Circular)"]}");
                                     Console.WriteLine($" Rango de Oido: {lector["Rango de Oido"]}");
                                     Console.WriteLine($" Tiempo de Atención: {lector["Tiempo de Atencion"]}");
+
+                                    // Freno para que puedas leer la comparación sin que se cierre
+                                    Console.WriteLine("\n¡Comparación finalizada!");
+                                    Console.ReadLine();
                                 }
 
 
@@ -111,5 +120,8 @@ public class Personaje
             Console.WriteLine("Error en la base de datos: " + ex.Message);
             Console.ResetColor();
         }
+
+     
     }
+
 }
