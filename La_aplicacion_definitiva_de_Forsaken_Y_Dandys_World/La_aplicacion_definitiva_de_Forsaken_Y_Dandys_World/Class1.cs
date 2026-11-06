@@ -1,4 +1,4 @@
-﻿using La_aplicacion_definitiva_de_Forsaken_Y_Dandys_World;
+using La_aplicacion_definitiva_de_Forsaken_Y_Dandys_World;
 using System;
 using System;
 using System.Collections.Generic;
@@ -7,6 +7,18 @@ using System.Text;
 using System.Linq;
 
 
+public class Partida
+{
+    public string Juego { get; set; } = "";
+    public string PersonajeUsado { get; set; } = "";
+    public string Resultado { get; set; } = "";
+    public int PisoORonda { get; set; }
+    public string CausaMuerte { get; set; } = "";
+    public string Tiempo_Sobrevivido { get; set; } = "";
+    public int Generadores_Reparados { get; set; } = 0;
+
+    public virtual void PedirDatos() { }
+}
 
 public class PartidaDW : Partida
 {
@@ -16,6 +28,7 @@ public class PartidaDW : Partida
     }
 
     // Polimorfismo: sobreescribimos el método para Dandy's World
+
     public override void PedirDatos()
     {
         Console.Clear();
