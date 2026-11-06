@@ -1,4 +1,4 @@
-﻿
+
 
 using System.ComponentModel.Design;
 
@@ -220,8 +220,23 @@ namespace La_aplicacion_definitiva_de_Forsaken_Y_Dandys_World
         {
 
             Console.WriteLine("Has Elegido");
+            Console.WriteLine("====================================================");
+            Console.WriteLine("               COMPARACION DE PERSONAJES 🤝");
+            Console.WriteLine("====================================================\n");
+            Console.WriteLine("\n Hola! Aqui podras comparar personajes!");
 
-  
+            Console.WriteLine("\nIngrese al primer personaje");
+
+            string Personaje1 = Console.ReadLine()!;
+
+            Console.WriteLine("¿Con que otro personaje desea comparar el seleccionado?");
+
+            string Personaje2 = Console.ReadLine()!;
+
+            Personaje comparador = new Personaje();
+            comparador.CompararEnBD(Personaje1, Personaje2, "DANDYS WORLD");
+
+
 
 
         }
@@ -404,7 +419,22 @@ namespace La_aplicacion_definitiva_de_Forsaken_Y_Dandys_World
         }
         static void ComparacionPersonajesForsaken()
         {
+            Console.WriteLine("Has Elegido");
+            Console.WriteLine("====================================================");
+            Console.WriteLine("               COMPARACION DE PERSONAJES 🤝");
+            Console.WriteLine("====================================================\n");
+            Console.WriteLine("\n Hola! Aqui podras comparar personajes!");
 
+            Console.WriteLine("\nIngrese al primer personaje");
+
+            string Personaje1 = Console.ReadLine()!;
+
+            Console.WriteLine("¿Con que otro personaje desea comparar el seleccionado?");
+
+            string Personaje2 = Console.ReadLine()!;
+
+            Personaje comparador = new Personaje();
+            comparador.CompararEnBD(Personaje1, Personaje2, "FORSAKEN");
 
 
 
@@ -650,6 +680,9 @@ namespace La_aplicacion_definitiva_de_Forsaken_Y_Dandys_World
 
         }
     }
+
+
+
 
 
 
